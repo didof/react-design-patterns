@@ -1,5 +1,9 @@
-const Stage = ({ num, stage, text }) => {
-  if (num !== stage) return <div></div>
+import { StepperContext } from '../Stepper.Provider'
+import React from 'react'
+
+const Stage = ({ num, text }) => {
+  const { stage } = React.useContext(StepperContext)
+  if (stage !== num) return null
 
   return (
     <div>

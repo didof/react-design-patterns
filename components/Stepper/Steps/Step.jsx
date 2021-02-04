@@ -1,4 +1,9 @@
-const Step = ({ num, stage }) => {
+import React from 'react'
+import { StepperContext } from '../Stepper.Provider'
+
+const Step = ({ num }) => {
+  const { stage } = React.useContext(StepperContext)
+
   if (num < stage) {
     return <div>done</div>
   }
